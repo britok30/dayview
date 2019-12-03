@@ -17,12 +17,12 @@ export default {
 
 <style scoped>
 .navbar-brand {
-  font-size: 4.3rem;
+  font-size: 2.5rem;
   font-weight: 200;
 }
 
 .logo {
-  font-size: 4.3rem;
+  font-size: 2.5rem;
 }
 
 #header {
@@ -37,8 +37,8 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 200;
-  font-size: 4rem;
-  letter-spacing: 5px;
+  font-size: 5rem;
+  letter-spacing: 7px;
 }
 </style>
 
