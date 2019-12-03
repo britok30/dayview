@@ -2,7 +2,7 @@
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
-        <ion-icon name="logo-apple" class="logo"></ion-icon>Music.js
+        <span class="bold">Day</span>View
       </a>
     </nav>
     <h1 v-scroll-reveal.reset="animate2">
@@ -17,17 +17,17 @@ export default {
   data() {
     return {
       animate1: {
-        delay: 250,
+        delay: 350,
         duration: 3500,
         origin: "bottom",
         distance: "30px"
       },
-       animate2: {
-        delay: 500,
+      animate2: {
+        delay: 1000,
         duration: 3500,
         origin: "bottom",
         distance: "30px"
-      },
+      }
     };
   }
 };
@@ -41,6 +41,10 @@ export default {
 
 .logo {
   font-size: 2.5rem;
+}
+
+.bold {
+  font-weight: 400;
 }
 
 #header {

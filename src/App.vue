@@ -2,18 +2,20 @@
   <div id="app">
     <Header />
     <div class="container">
-
+      <Profile />
     </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
+import Profile from "./components/Profile";
 
 export default {
   name: "app",
   components: {
-    Header
+    Header,
+    Profile
   }
 };
 </script>
