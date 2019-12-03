@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <div class="container-fluid">
-        <Header />
+    <Header />
+    <div class="container">
+
     </div>
   </div>
 </template>
@@ -33,5 +34,4 @@ body {
   background: #181818;
   color: #fff;
 }
-
 </style>

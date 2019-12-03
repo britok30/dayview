@@ -1,17 +1,36 @@
 <template>
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
         <ion-icon name="logo-apple" class="logo"></ion-icon>Music.vue
       </a>
     </nav>
-    <h1>Welcome</h1>
+    <h1 v-scroll-reveal.reset="animate2">
+      Welcome
+    </h1>
   </header>
 </template>
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  data() {
+    return {
+      animate1: {
+        delay: 250,
+        duration: 3500,
+        origin: "bottom",
+        distance: "30px"
+      },
+       animate2: {
+        delay: 500,
+        duration: 3500,
+        origin: "bottom",
+        distance: "30px"
+      },
+
+    };
+  }
 };
 </script>
 
@@ -41,4 +60,3 @@ h1 {
   letter-spacing: 7px;
 }
 </style>
-
