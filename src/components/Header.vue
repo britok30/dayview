@@ -2,7 +2,7 @@
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
-        <ion-icon name="logo-apple" class="logo"></ion-icon>Music.vue
+        <ion-icon name="logo-apple" class="logo"></ion-icon>Music.js
       </a>
     </nav>
     <h1 v-scroll-reveal.reset="animate2">
@@ -28,7 +28,6 @@ export default {
         origin: "bottom",
         distance: "30px"
       },
-
     };
   }
 };
