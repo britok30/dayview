@@ -11,7 +11,9 @@
       <h1 v-scroll-reveal.reset="animate2">
         Welcome
       </h1>
-      <p class="header-info" v-scroll-reveal.reset="animate3">Top source for daily financial news and stocks</p>
+      <p class="header-info" v-scroll-reveal.reset="animate3">
+        Daily financial news and stocks
+      </p>
     </div>
   </header>
 </template>
@@ -35,7 +37,7 @@ export default {
         origin: "bottom",
         distance: "30px"
       },
-       animate3: {
+      animate3: {
         delay: 1500,
         duration: 3500,
         origin: "bottom",
@@ -58,18 +60,18 @@ export default {
 }
 
 .bold {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 #header {
-  height: 85vh;
+  height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.511)),
     url("../assets/hero.jpg") no-repeat center center/cover;
 }
 
 h1 {
   font-weight: 200;
-  font-size: 5rem;
+  font-size: 9rem;
   letter-spacing: 7px;
   text-align: center;
 }

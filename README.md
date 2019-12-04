@@ -1,4 +1,4 @@
-# music
+# DayView
 
 ## Project setup
 ```
