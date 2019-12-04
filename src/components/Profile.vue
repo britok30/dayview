@@ -1,11 +1,11 @@
 <template>
   <div>
-    Profile
+    
   </div>
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "Profile",
@@ -16,8 +16,8 @@ export default {
     };
   },
   async created() {
-
     this.loading = true;
+    axios.get (``)
    
   }
 };
