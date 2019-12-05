@@ -4,7 +4,12 @@
       <div class="col-md-12" v-if="topNews">
         <div class="media news" v-for="(news, i) in topNews" :key="i">
           <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
-          <img v-if="news.urlToImage == null" src="../assets/news.gif" class="mr-3 newsimg" alt="..." />
+          <img
+            v-if="news.urlToImage == null"
+            src="../assets/news.gif"
+            class="mr-3 newsimg"
+            alt="..."
+          />
           <div class="media-body">
             <h3 class="mt-0">{{ news.title }}</h3>
             <p>{{ news.description }}</p>
@@ -52,6 +57,7 @@ export default {
 
 h3 {
   font-size: 2.5rem;
+  color: rgb(233, 113, 66);
 }
 
 p {
@@ -65,5 +71,4 @@ a {
 .news {
   margin: 4rem 0;
 }
-
 </style>

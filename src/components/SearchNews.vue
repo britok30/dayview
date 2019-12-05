@@ -116,6 +116,7 @@ label {
 
 h3 {
   font-size: 2.5rem;
+   color: rgb(233, 113, 66);
 }
 
 p {

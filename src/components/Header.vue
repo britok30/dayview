@@ -7,8 +7,11 @@
     </nav>
 
     <div class="header-text">
-      <h1 v-scroll-reveal.reset="animate2">Your <span class="bold">Day</span>
-        starts here</h1>
+      <h1 v-scroll-reveal.reset="animate2">
+        Your
+        <span class="bold" v-scroll-reveal.reset="animate">Day</span>
+        starts here
+      </h1>
     </div>
   </header>
 </template>
@@ -25,7 +28,7 @@ export default {
         distance: "30px"
       },
       animate2: {
-        delay: 1000,
+        delay: 1500,
         duration: 3500,
         origin: "bottom",
         distance: "30px"
@@ -49,6 +52,7 @@ export default {
 
 .bold {
   font-weight: 600;
+  color: rgb(233, 113, 66);
 }
 
 #header {
@@ -59,9 +63,9 @@ export default {
 
 h1 {
   font-weight: 200;
-  font-size: 5.5rem;
+  font-size: 9rem;
   letter-spacing: 7px;
-  text-align: center;
+  text-align: left;
 }
 
 .header-text {
