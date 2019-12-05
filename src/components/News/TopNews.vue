@@ -6,7 +6,7 @@
           <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
           <img
             v-if="news.urlToImage == null"
-            src="../assets/news.gif"
+            src="../../assets/news.gif"
             class="mr-3 newsimg"
             alt="..."
           />
@@ -30,8 +30,7 @@ export default {
     return {
       loading: false,
       topNews: [],
-      pageSize: 10,
-      altimg: "../assets/news.gif"
+      pageSize: 10
     };
   },
   created() {

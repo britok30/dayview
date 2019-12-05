@@ -9,7 +9,7 @@
 
 <script>
 import Header from "./components/Header";
-import SearchNews from "./components/SearchNews";
+import SearchNews from "./components/News/SearchNews";
 
 export default {
   name: "app",

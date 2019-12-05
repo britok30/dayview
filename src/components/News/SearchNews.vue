@@ -27,7 +27,7 @@
               <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
               <img
                 v-if="news.urlToImage == null"
-                src="../assets/news.gif"
+                src="../../assets/news.gif"
                 class="mr-3 newsimg"
                 alt="..."
               />
@@ -46,7 +46,7 @@
 
 <script>
 import axios from "axios";
-import TopNews from "../components/TopNews";
+import TopNews from "./TopNews";
 
 export default {
   name: "SearchNews",
@@ -58,8 +58,7 @@ export default {
       loading: false,
       searchTerm: "",
       searchResults: [],
-      pageSize: 10,
-      altimg: "../assets/news.gif"
+      pageSize: 10
     };
   },
   methods: {
@@ -100,6 +99,10 @@ export default {
   border: 1px solid #000;
 }
 
+input:focus {
+  outline: none;
+}
+
 label {
   font-size: 2rem;
 }
@@ -109,14 +112,14 @@ label {
 }
 
 .lead-head {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
   color: rgb(233, 113, 66);
 }
 
 h3 {
   font-size: 2.5rem;
-   color: rgb(233, 113, 66);
+  color: rgb(233, 113, 66);
 }
 
 p {

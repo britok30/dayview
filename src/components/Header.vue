@@ -57,7 +57,7 @@ export default {
 
 #header {
   height: 110vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.511)),
+  background: linear-gradient(rgba(0, 0, 0, 0.411), rgba(0, 0, 0, 0.411)),
     url("../assets/hero.jpg") no-repeat center center/cover;
 }
 
