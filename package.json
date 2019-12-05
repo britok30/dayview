@@ -10,7 +10,6 @@
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^3.4.3",
-    "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-scroll-reveal": "^1.0.11"
   },

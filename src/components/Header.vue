@@ -2,24 +2,18 @@
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
-        <span class="bold">Day</span>View <br />
-        <p class="date">{{ moment }}</p>
+        <span class="bold">Day</span>View
       </a>
     </nav>
 
     <div class="header-text">
-      <h1 v-scroll-reveal.reset="animate2">
-        Welcome
-      </h1>
-      <p class="header-info" v-scroll-reveal.reset="animate3">
-        Daily financial news and stocks
-      </p>
+      <h1 v-scroll-reveal.reset="animate2">Welcome</h1>
+      <p class="header-info" v-scroll-reveal.reset="animate3">Daily financial news and stocks</p>
     </div>
   </header>
 </template>
 
 <script>
-import moment from "moment";
 
 export default {
   name: "Navbar",
@@ -44,11 +38,6 @@ export default {
         distance: "30px"
       }
     };
-  },
-  computed: {
-    moment: function() {
-      return moment().format("dddd, MMMM Do YYYY, h:mm a");
-    }
   }
 };
 </script>
