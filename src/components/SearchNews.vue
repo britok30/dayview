@@ -1,48 +1,58 @@
 <template>
   <section id="news">
     <h2 class="lead-head">Your News</h2>
-    <div class="col-md-6 search">
-      <form @submit.prevent="onSubmit">
-        <div class="form-group">
-          <label for="company">Search News</label>
-          <input
-            class="search-company"
-            type="text"
-            name="company"
-            v-model="searchTerm"
-            placeholder="Enter Company"
-          />
-        </div>
-      </form>
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="top-lead">Top News</h2>
+        <TopNews />
+      </div>
 
-      <div class="row">
-        <div class="col-md-12" v-if="searchResults">
-          <div class="media news" v-for="(news, i) in searchResults" :key="i">
-            <img
-              :src="news.urlToImage != null ? news.urlToImage : altimg"
-              class="mr-3 newsimg"
-              alt="news image"
+      <div class="col-md-6 search">
+        <form @submit.prevent="onSubmit">
+          <div class="form-group">
+            <label for="company">Search News</label>
+            <input
+              class="search-company"
+              type="text"
+              name="company"
+              v-model="searchTerm"
+              placeholder="Enter Company"
             />
-            <div class="media-body">
-              <h3 class="mt-0">{{ news.title }}</h3>
-              <p>{{ news.description }}</p>
-              <a :href="news.url">News Article</a>
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col-md-12" v-if="searchResults">
+            <div class="media news" v-for="(news, i) in searchResults" :key="i">
+              <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
+              <img
+                v-if="news.urlToImage == null"
+                src="../assets/news.gif"
+                class="mr-3 newsimg"
+                alt="..."
+              />
+              <div class="media-body">
+                <h3 class="mt-0">{{ news.title }}</h3>
+                <p>{{ news.description }}</p>
+                <a :href="news.url">News Article</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      
     </div>
   </section>
 </template>
 
 <script>
 import axios from "axios";
+import TopNews from "../components/TopNews";
 
 export default {
   name: "SearchNews",
+  components: {
+    TopNews
+  },
   data() {
     return {
       loading: false,
@@ -74,6 +84,10 @@ export default {
   margin-top: 4rem;
 }
 
+.top-lead {
+  margin: 3rem 0;
+}
+
 .search {
   margin: 3rem 0;
 }
@@ -87,7 +101,7 @@ export default {
 }
 
 label {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .news {
@@ -113,5 +127,6 @@ a {
 }
 .newsimg {
   width: 30%;
+  border-radius: 5px;
 }
 </style>
