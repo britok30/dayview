@@ -1,5 +1,5 @@
 <template>
-  <div class="search">
+  <div class="col-md-6 search">
     <form @submit.prevent="onSubmit">
       <div class="form-group">
         <label for="company">Search News</label>
@@ -7,23 +7,21 @@
           class="search-company"
           type="text"
           name="company"
-          v-model="q"
+          v-model="searchTerm"
           placeholder="Enter Company"
         />
       </div>
     </form>
 
     <div class="row company">
-      <div class="info-container">
-        <div class="col-md-12">
-          <div class="media" v-for="(news, i) in companyNews" :key="i">
-            <img :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
-            <div class="media-body">
-              <h5 class="mt-0">{{ news.title }}</h5>
-              <p>{{ news.description }}</p>
-              <p>{{news.url}}</p>
-              <p></p>
-            </div>
+      <div class="col-md-12" v-if="searchResults">
+        <div class="media" v-for="(news, i) in searchResults" :key="i">
+          <img :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
+          <div class="media-body">
+            <h5 class="mt-0">{{ news.title }}</h5>
+            <p>{{ news.description }}</p>
+            <p>{{news.url}}</p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -35,13 +33,14 @@
 import axios from "axios";
 
 export default {
-  name: "News",
+  name: "SearchNews",
   data() {
     return {
       loading: false,
       searchTerm: "",
-      companyNews: [],
-      pageSize: 20
+      searchResults: [],
+      topNews: [],
+      pageSize: 10
     };
   },
   methods: {
@@ -53,22 +52,22 @@ export default {
         )
         .then(res => {
           console.log(res.data.articles);
-          this.companyNews = res.data.articles;
+          this.searchResults = res.data.articles;
           this.loading = false;
         });
     },
-    created() {
-      this.loading = true;
-       return axios
-        .get(
-          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
-        )
-        .then(res => {
-          console.log(res.data.articles);
-          this.companyNews = res.data.articles;
-          this.loading = false;
-        });
-    }
+    // created() {
+    //   this.loading = true;
+    //   return axios
+    //     .get(
+    //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
+    //     )
+    //     .then(res => {
+    //       console.log(res.data.articles);
+    //       this.topNews = res.data.articles;
+    //       this.loading = false;
+    //     });
+    // }
   }
 };
 </script>

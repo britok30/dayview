@@ -2,20 +2,20 @@
   <div id="app">
     <Header />
     <div class="container">
-      <News />
+      <SearchNews />
     </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
-import News from "./components/News";
+import SearchNews from "./components/SearchNews";
 
 export default {
   name: "app",
   components: {
     Header,
-    News
+    SearchNews
   }
 };
 </script>
