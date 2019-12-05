@@ -58,7 +58,7 @@ export default {
 
 h1 {
   font-weight: 200;
-  font-size: 9rem;
+  font-size: 5rem;
   letter-spacing: 7px;
   text-align: center;
 }

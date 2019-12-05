@@ -2,7 +2,7 @@
   <div class="search">
     <form @submit.prevent="onSubmit">
       <div class="form-group">
-        <label for="company">Search Company News</label>
+        <label for="company">Search News</label>
         <input
           class="search-company"
           type="text"
@@ -15,7 +15,7 @@
 
     <div class="row company">
       <div class="info-container">
-        <div class="col-md-12" v-if="companyNews">
+        <div class="col-md-12">
           <div class="media" v-for="(news, i) in companyNews" :key="i">
             <img :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
             <div class="media-body">
@@ -35,13 +35,13 @@
 import axios from "axios";
 
 export default {
-  name: "Company",
+  name: "News",
   data() {
     return {
       loading: false,
-      q: "",
+      searchTerm: "",
       companyNews: [],
-      pageSize: 10
+      pageSize: 20
     };
   },
   methods: {
@@ -49,7 +49,19 @@ export default {
       this.loading = true;
       return axios
         .get(
-          `https://newsapi.org/v2/top-headlines?q=${this.q}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
+          `https://newsapi.org/v2/everything?q=${this.searchTerm}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}&pageSize=${this.pageSize}`
+        )
+        .then(res => {
+          console.log(res.data.articles);
+          this.companyNews = res.data.articles;
+          this.loading = false;
+        });
+    },
+    created() {
+      this.loading = true;
+       return axios
+        .get(
+          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
         )
         .then(res => {
           console.log(res.data.articles);
