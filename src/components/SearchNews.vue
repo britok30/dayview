@@ -1,32 +1,41 @@
 <template>
-  <div class="col-md-6 search">
-    <form @submit.prevent="onSubmit">
-      <div class="form-group">
-        <label for="company">Search News</label>
-        <input
-          class="search-company"
-          type="text"
-          name="company"
-          v-model="searchTerm"
-          placeholder="Enter Company"
-        />
-      </div>
-    </form>
+  <section id="news">
+    <h2 class="lead-head">Your News</h2>
+    <div class="col-md-6 search">
+      <form @submit.prevent="onSubmit">
+        <div class="form-group">
+          <label for="company">Search News</label>
+          <input
+            class="search-company"
+            type="text"
+            name="company"
+            v-model="searchTerm"
+            placeholder="Enter Company"
+          />
+        </div>
+      </form>
 
-    <div class="row company">
-      <div class="col-md-12" v-if="searchResults">
-        <div class="media" v-for="(news, i) in searchResults" :key="i">
-          <img :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
-          <div class="media-body">
-            <h5 class="mt-0">{{ news.title }}</h5>
-            <p>{{ news.description }}</p>
-            <p>{{news.url}}</p>
-            <p></p>
+      <div class="row">
+        <div class="col-md-12" v-if="searchResults">
+          <div class="media news" v-for="(news, i) in searchResults" :key="i">
+            <img
+              :src="news.urlToImage != null ? news.urlToImage : altimg"
+              class="mr-3 newsimg"
+              alt="news image"
+            />
+            <div class="media-body">
+              <h3 class="mt-0">{{ news.title }}</h3>
+              <p>{{ news.description }}</p>
+              <a :href="news.url">News Article</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="col-md-6">
+      
+    </div>
+  </section>
 </template>
 
 <script>
@@ -39,8 +48,8 @@ export default {
       loading: false,
       searchTerm: "",
       searchResults: [],
-      topNews: [],
-      pageSize: 10
+      pageSize: 10,
+      altimg: "../assets/news.gif"
     };
   },
   methods: {
@@ -55,24 +64,16 @@ export default {
           this.searchResults = res.data.articles;
           this.loading = false;
         });
-    },
-    // created() {
-    //   this.loading = true;
-    //   return axios
-    //     .get(
-    //       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
-    //     )
-    //     .then(res => {
-    //       console.log(res.data.articles);
-    //       this.topNews = res.data.articles;
-    //       this.loading = false;
-    //     });
-    // }
+    }
   }
 };
 </script>
 
 <style scoped>
+#news {
+  margin-top: 4rem;
+}
+
 .search {
   margin: 3rem 0;
 }
@@ -89,26 +90,28 @@ label {
   font-size: 1.5rem;
 }
 
-.company {
-  margin-top: 3rem;
+.news {
+  margin: 4rem 0;
 }
 
-ul {
-  list-style: none;
+.lead-head {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgb(233, 113, 66);
 }
 
-ul li {
-  font-size: 1.4rem;
-  padding: 1rem 0;
-  color: #fff;
+h3 {
+  font-size: 2.5rem;
 }
 
-h5 {
+p {
   font-size: 1.3rem;
-  color: #fff;
 }
 
+a {
+  font-size: 1.2rem;
+}
 .newsimg {
-  width: 10%;
+  width: 30%;
 }
 </style>

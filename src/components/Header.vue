@@ -7,7 +7,8 @@
     </nav>
 
     <div class="header-text">
-      <h1 v-scroll-reveal.reset="animate2">Your morning updates made simple</h1>
+      <h1 v-scroll-reveal.reset="animate2">Your <span class="bold">Day</span>
+        starts here</h1>
     </div>
   </header>
 </template>
@@ -58,7 +59,7 @@ export default {
 
 h1 {
   font-weight: 200;
-  font-size: 5rem;
+  font-size: 5.5rem;
   letter-spacing: 7px;
   text-align: center;
 }
