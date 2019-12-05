@@ -7,14 +7,12 @@
     </nav>
 
     <div class="header-text">
-      <h1 v-scroll-reveal.reset="animate2">Welcome</h1>
-      <p class="header-info" v-scroll-reveal.reset="animate3">Daily financial news and stocks</p>
+      <h1 v-scroll-reveal.reset="animate2">Your morning updates made simple</h1>
     </div>
   </header>
 </template>
 
 <script>
-
 export default {
   name: "Navbar",
   data() {
@@ -53,7 +51,7 @@ export default {
 }
 
 #header {
-  height: 90vh;
+  height: 110vh;
   background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.511)),
     url("../assets/hero.jpg") no-repeat center center/cover;
 }
@@ -67,7 +65,7 @@ h1 {
 
 .header-text {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

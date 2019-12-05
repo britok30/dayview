@@ -2,20 +2,20 @@
   <div id="app">
     <Header />
     <div class="container">
-      <Profile />
+      <Company />
     </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
-import Profile from "./components/Profile";
+import Company from "./components/Company";
 
 export default {
   name: "app",
   components: {
     Header,
-    Profile
+    Company
   }
 };
 </script>
