@@ -9,7 +9,7 @@
     <div class="header-text">
       <h1 v-scroll-reveal.reset="animate2">
         Your
-        <span class="bold" v-scroll-reveal.reset="animate">Day</span>
+        <span class="bold">Day</span>
         starts here
       </h1>
     </div>

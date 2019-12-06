@@ -2,7 +2,9 @@
   <div>
     <StocksShow />
     <div class="row">
-      <div class="col-md-6"></div>
+      <div class="col-md-6 stock-container">
+        
+      </div>
     </div>
   </div>
 </template>
@@ -19,19 +21,18 @@ export default {
   data() {
     return {
       symbol: "",
-      function: "TIME_SERIES_INTRADAY",
-      interval: "5min"
+      stocks: ""
     };
   },
   created() {
     this.loading = true;
     return axios
       .get(
-        `https://www.alphavantage.co/query?function=${this.function}&symbol=${this.symbol}&interval=${this.interval}&apikey=${process.env.VUE_APP_STOCKS_API_KEY}`
+        `https://api.worldtradingdata.com/api/v1/stock?symbol=SNAP,TWTR,VOD.L&api_token=${process.env.VUE_APP_STOCKS_API_KEY}`
       )
       .then(res => {
-        console.log(res.data);
-        this.topNews = res.data;
+        console.log(res.data.data);
+        this.stocks = res.data.data;
         this.loading = false;
       });
   }
@@ -39,4 +40,15 @@ export default {
 </script>
 
 <style>
+.stock-container {
+  margin-top: 3rem;
+  background-color: #fff;
+  height: 30vh;
+  border-radius: 5px;
+}
+
+h3 {
+  color: #000;
+  padding-top: 3rem;
+}
 </style>
