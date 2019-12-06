@@ -1,38 +1,29 @@
 <template>
-  <section id="stocks">
-    <div class="row">
-      <div class="col-md-12 search">
-        <form @submit.prevent="onSubmit">
-          <div class="form-group">
-            <label for="stocks">Search Stocks</label>
-            <input
-              class="search-company"
-              type="text"
-              name="stocks"
-              v-model="searchTerm"
-              placeholder="Enter company ticker (ex. Apple = 'AAPL')"
-            />
-          </div>
-        </form>
+  <div class="col-md-12 search">
+    <form @submit.prevent="onSubmit">
+      <div class="form-group">
+        <label for="stocks">Search Stocks</label>
+        <input
+          class="search-stocks"
+          type="text"
+          name="stocks"
+          v-model="searchTerm"
+          placeholder="Enter company ticker (ex. Apple = 'AAPL')"
+        />
+      </div>
+    </form>
 
-        <div class="row">
-          <div class="col-md-12" v-if="searchResults">
-            <div
-              class="media stocks"
-              v-scroll-reveal.reset="animate1"
-            >
-              <img src="../../assets/searchstocks.jpg" class="mr-3 newsimg" alt="..." />
-              <div class="media-body">
-                <h3 class="mt-0">{{ news.title }}</h3>
-                <p>{{ news.description }}</p>
-                <a :href="news.url">News Article</a>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-md-12" v-if="searchStocks">
+        <div class="media stocks" v-scroll-reveal.reset="animate1">
+          <img src="../../assets/searchstocks.jpg" class="mr-3 newsimg" alt="..." />
+          <div class="media-body">
+            <h3 class="mt-0">{{ searchStocks.name}}</h3>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -42,10 +33,8 @@ export default {
   name: "SearchStocks",
   data() {
     return {
-      loading: false,
-      searchTerm: "",
-      searchResults: [],
-      pageSize: 10,
+      searchStocks: "",
+      stockSymbol: "",
       animate1: {
         delay: 350,
         duration: 3000,
@@ -59,11 +48,13 @@ export default {
       this.loading = true;
       return axios
         .get(
-          `https://newsapi.org/v2/everything?q=${this.searchTerm}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}&pageSize=${this.pageSize}`
+          `https://api.worldtradingdata.com/api/v1/stock?symbol=${this.stockSymbol.toUpperCase()}&api_token=${
+            process.env.VUE_APP_STOCKS_API_KEY
+          }`
         )
         .then(res => {
-          console.log(res.data.articles);
-          this.searchResults = res.data.articles;
+          console.log(res.data.data);
+          this.searchStocks = res.data.data;
           this.loading = false;
         });
     }
@@ -72,7 +63,6 @@ export default {
 </script>
 
 <style scoped>
-
 .search {
   margin: 3rem 0;
 }
@@ -93,6 +83,4 @@ label {
   font-size: 2.3rem;
   letter-spacing: 4px;
 }
-
-
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div>
     <StocksShow />
-    <div class="row"></div>
     <div class="row">
       <div class="col-md-4" v-for="stock in stocks" :key="stock.symbol">
         <div class="card" v-scroll-reveal.reset="animate1">
@@ -26,17 +25,22 @@
         </div>
       </div>
     </div>
+     <div class="row">
+      <SearchStocks />
+    </div>
   </div>
 </template>
 
 <script>
 import StocksShow from "./StocksShow";
+import SearchStocks from "./SearchStocks";
 import axios from "axios";
 
 export default {
   name: "Stocks",
   components: {
-    StocksShow
+    StocksShow,
+    SearchStocks
   },
   data() {
     return {
