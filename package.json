@@ -11,6 +11,7 @@
     "axios": "^0.19.0",
     "core-js": "^3.4.3",
     "mapbox-gl": "^1.6.0",
+    "serialize-javascript": "^2.1.1",
     "vue": "^2.6.10",
     "vue-mapbox": "^0.4.1",
     "vue-scroll-reveal": "^1.0.11"
