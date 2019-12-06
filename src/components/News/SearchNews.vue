@@ -16,7 +16,7 @@
               type="text"
               name="company"
               v-model="searchTerm"
-              placeholder="Search your favorite topics"
+              placeholder="Enter your favorite topics"
             />
           </div>
         </form>
@@ -84,7 +84,9 @@ export default {
 }
 
 .top-lead {
-  margin: 3rem 0;
+  margin-top: 4rem;
+  font-size: 2.3rem;
+  letter-spacing: 4px;
 }
 
 .search {
@@ -104,7 +106,8 @@ input:focus {
 }
 
 label {
-  font-size: 2rem;
+  font-size: 2.3rem;
+  letter-spacing: 4px;
 }
 
 .news {
