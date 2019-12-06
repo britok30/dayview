@@ -1,15 +1,21 @@
 <template>
   <div>
-      
+    <WeatherShow />
   </div>
 </template>
 
 <script>
-export default {
+import WeatherShow from "./WeatherShow";
 
-}
+export default {
+  name: "Weather",
+  components: {
+    WeatherShow
+  },
+  data() {
+    return {};
+  }
+};
 </script>
 
-<style>
-
-</style>
+<style scoped></style>

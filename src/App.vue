@@ -4,6 +4,7 @@
     <div class="container">
       <SearchNews />
       <Stocks />
+      <Weather />
       <Footer />
     </div>
   </div>
@@ -13,6 +14,7 @@
 import Header from "./components/Header";
 import SearchNews from "./components/News/SearchNews";
 import Stocks from "./components/Stocks/Stocks";
+import Weather from "./components/Weather/Weather";
 import Footer from "./components/Footer";
 
 export default {
@@ -21,6 +23,7 @@ export default {
     Header,
     SearchNews,
     Stocks,
+    Weather,
     Footer
   }
 };
