@@ -2,7 +2,12 @@
   <div class="topnews">
     <div class="row">
       <div class="col-md-12" v-if="topNews">
-        <div class="media news" v-for="(news, i) in topNews" :key="i">
+        <div
+          class="media news"
+          v-for="(news, i) in topNews"
+          :key="i"
+          v-scroll-reveal.reset="animate1"
+        >
           <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
           <img
             v-if="news.urlToImage == null"
@@ -30,7 +35,13 @@ export default {
     return {
       loading: false,
       topNews: [],
-      pageSize: 10
+      pageSize: 10,
+      animate1: {
+        delay: 350,
+        duration: 3000,
+        origin: "bottom",
+        distance: "30px"
+      },
     };
   },
   created() {
@@ -64,7 +75,7 @@ p {
 }
 
 a {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .news {

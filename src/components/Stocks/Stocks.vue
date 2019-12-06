@@ -11,8 +11,11 @@
             <p class="card-text">Price: {{stock.price}}</p>
             <p class="card-text">Day High: {{stock.day_high}}</p>
             <p class="card-text">Day Low: {{stock.day_low}}</p>
-            <p class="card-text">Day Low: {{stock.day_low}}</p>
+            <p class="card-text">52 Week High: {{stock["52_week_high"]}}</p>
+            <p class="card-text">52 Week Low: {{stock["52_week_low"]}}</p>
             <p class="card-text">Market Cap: {{stock.market_cap.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
+            <p class="card-text">Volume: {{stock.volume.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
+            <p class="card-text">Stock Exchange: {{stock.stock_exchange_short}}</p>
             <p></p>
           </div>
         </div>
