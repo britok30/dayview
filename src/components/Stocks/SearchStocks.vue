@@ -13,14 +13,14 @@
       </div>
     </form>
 
-    <div class="col-md-12" v-if="searchStocks">
+    <div class="col-md-12" v-if="searchStocks !== null">
       <div
         class="media stockmedia"
         v-scroll-reveal.reset="animate1"
         v-for="(stock, i) in searchStocks"
         :key="i"
       >
-        <img v-if="stock" src="../../assets/searchstocks.jpg" class="mr-3 stockimg" alt="stock image" />
+        <img src="../../assets/searchstocks.jpg" class="mr-3 stockimg" alt="stock image" />
         <div class="media-body">
           <h3 class="mt-0">{{ stock.name}}</h3>
           <p>Symbol: {{stock.symbol}}</p>
@@ -32,6 +32,16 @@
           <p>Market Cap: {{stock.market_cap.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
           <p>Volume: {{stock.volume.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
           <p>Stock Exchange: {{stock.stock_exchange_short}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12" v-if="searchStocks == null">
+      <div class="media stockmedia" v-scroll-reveal.reset="animate1">
+        <img src="../../assets/notfound.jpg" class="mr-3 stockimg" alt="stock image" />
+        <div class="media-body">
+          <h1 class="notfound">Request Not Found</h1>
+          <p>The request you've put in could not be found. Please make sure to enter the correct company ticker!</p>
         </div>
       </div>
     </div>
@@ -114,5 +124,9 @@ p {
 .stockmedia {
   background: #252525;
   border-radius: 5px;
+}
+
+.notfound {
+  font-size: 4rem;
 }
 </style>
