@@ -32,12 +32,6 @@ export default {
         duration: 3500,
         origin: "bottom",
         distance: "30px"
-      },
-      animate3: {
-        delay: 1500,
-        duration: 3500,
-        origin: "bottom",
-        distance: "30px"
       }
     };
   }

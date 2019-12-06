@@ -1,22 +1,16 @@
 <template>
-  <section id="news">
-    <h2 class="lead-head" v-scroll-reveal.reset="animate1">Your News</h2>
+  <section id="stocks">
     <div class="row">
-      <div class="col-md-6">
-        <h2 class="top-lead">Top News</h2>
-        <TopNews />
-      </div>
-
-      <div class="col-md-6 search">
+      <div class="col-md-12 search">
         <form @submit.prevent="onSubmit">
           <div class="form-group">
-            <label for="news">Search News</label>
+            <label for="stocks">Search Stocks</label>
             <input
               class="search-company"
               type="text"
-              name="news"
+              name="stocks"
               v-model="searchTerm"
-              placeholder="Enter your favorite topics"
+              placeholder="Enter company ticker (ex. Apple = 'AAPL')"
             />
           </div>
         </form>
@@ -24,18 +18,10 @@
         <div class="row">
           <div class="col-md-12" v-if="searchResults">
             <div
-              class="media news"
-              v-for="(news, i) in searchResults"
-              :key="i"
+              class="media stocks"
               v-scroll-reveal.reset="animate1"
             >
-              <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
-              <img
-                v-if="news.urlToImage == null"
-                src="../../assets/news.gif"
-                class="mr-3 newsimg"
-                alt="..."
-              />
+              <img src="../../assets/searchstocks.jpg" class="mr-3 newsimg" alt="..." />
               <div class="media-body">
                 <h3 class="mt-0">{{ news.title }}</h3>
                 <p>{{ news.description }}</p>
@@ -51,13 +37,9 @@
 
 <script>
 import axios from "axios";
-import TopNews from "./TopNews";
 
 export default {
-  name: "SearchNews",
-  components: {
-    TopNews
-  },
+  name: "SearchStocks",
   data() {
     return {
       loading: false,
@@ -90,21 +72,12 @@ export default {
 </script>
 
 <style scoped>
-#news {
-  margin-top: 4rem;
-}
-
-.top-lead {
-  margin-top: 4rem;
-  font-size: 2.3rem;
-  letter-spacing: 4px;
-}
 
 .search {
   margin: 3rem 0;
 }
 
-.search-company {
+.search-stocks {
   padding: 1rem;
   width: 100%;
   font-size: 1.5rem;
@@ -121,30 +94,5 @@ label {
   letter-spacing: 4px;
 }
 
-.news {
-  margin: 4rem 0;
-}
 
-.lead-head {
-  font-size: 5rem;
-  font-weight: 700;
-  color: rgb(233, 113, 66);
-}
-
-h3 {
-  font-size: 2.5rem;
-  color: rgb(233, 113, 66);
-}
-
-p {
-  font-size: 1.3rem;
-}
-
-a {
-  font-size: 1.3rem;
-}
-.newsimg {
-  width: 30%;
-  border-radius: 5px;
-}
 </style>

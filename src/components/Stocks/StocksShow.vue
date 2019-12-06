@@ -1,12 +1,22 @@
 <template>
-  <div class="showcase">
+  <div class="showcase" v-scroll-reveal.reset="animate1">
     <h2 class="lead-head">Stocks</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "StocksShow"
+  name: "StocksShow",
+  data(){
+    return {
+      animate1: {
+        delay: 350,
+        duration: 3500,
+        origin: "bottom",
+        distance: "30px"
+      }
+    }
+  }
 };
 </script>
 
