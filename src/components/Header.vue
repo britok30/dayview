@@ -2,7 +2,7 @@
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
-        <span class="bold">Day</span>View
+        <span class="bold">Day</span>ViewTimes
       </a>
     </nav>
 

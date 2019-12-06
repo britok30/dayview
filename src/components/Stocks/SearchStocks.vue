@@ -12,14 +12,15 @@
         />
       </div>
     </form>
-    <div class="col-md-12">
+
+    <div class="col-md-12" v-if="searchStocks">
       <div
         class="media stockmedia"
         v-scroll-reveal.reset="animate1"
         v-for="(stock, i) in searchStocks"
         :key="i"
       >
-        <img src="../../assets/searchstocks.jpg" class="mr-3 stockimg" alt="stock image" />
+        <img v-if="stock" src="../../assets/searchstocks.jpg" class="mr-3 stockimg" alt="stock image" />
         <div class="media-body">
           <h3 class="mt-0">{{ stock.name}}</h3>
           <p>Symbol: {{stock.symbol}}</p>
