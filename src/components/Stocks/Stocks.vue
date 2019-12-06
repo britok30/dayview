@@ -16,16 +16,22 @@ export default {
   components: {
     StocksShow
   },
-  data() {},
+  data() {
+    return {
+      symbol: "",
+      function: "TIME_SERIES_INTRADAY",
+      interval: "5min"
+    };
+  },
   created() {
     this.loading = true;
     return axios
       .get(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.VUE_APP_NEWS_API_KEY}&pageSize=${this.pageSize}`
+        `https://www.alphavantage.co/query?function=${this.function}&symbol=${this.symbol}&interval=${this.interval}&apikey=${process.env.VUE_APP_STOCKS_API_KEY}`
       )
       .then(res => {
-        console.log(res.data.articles);
-        this.topNews = res.data.articles;
+        console.log(res.data);
+        this.topNews = res.data;
         this.loading = false;
       });
   }
