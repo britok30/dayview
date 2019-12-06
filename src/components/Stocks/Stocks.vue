@@ -20,7 +20,6 @@
               class="card-text"
             >Volume: {{stock.volume.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
             <p class="card-text">Stock Exchange: {{stock.stock_exchange_short}}</p>
-            <p></p>
           </div>
         </div>
       </div>
