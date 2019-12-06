@@ -3,11 +3,8 @@
     <p>DayViewTimes &copy;</p>
     <p>
       Powered by
-      <a href="https://newsapi.org/">News Api</a>
-    </p>
-    <p>
-      Powered by
-      <a href="https://www.worldtradingdata.com/">World Trading Data</a>
+      <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer">News Api</a> &
+      <a href="https://www.worldtradingdata.com/" target="_blank" rel="noopener noreferrer">World Trading Data</a>
     </p>
     <p>Code & Design by Brito</p>
   </div>
@@ -17,5 +14,9 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+p {
+  text-align: center;
+  font-size: 1.15rem;
+}
 </style>

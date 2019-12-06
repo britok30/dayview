@@ -4,6 +4,7 @@
     <div class="container">
       <SearchNews />
       <Stocks />
+      <Footer />
     </div>
   </div>
 </template>
@@ -12,13 +13,15 @@
 import Header from "./components/Header";
 import SearchNews from "./components/News/SearchNews";
 import Stocks from "./components/Stocks/Stocks";
+import Footer from "./components/Footer";
 
 export default {
   name: "app",
   components: {
     Header,
     SearchNews,
-    Stocks
+    Stocks,
+    Footer
   }
 };
 </script>
