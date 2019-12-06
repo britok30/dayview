@@ -2,8 +2,20 @@
   <div>
     <StocksShow />
     <div class="row">
-      <div class="col-md-6 stock-container">
-        
+      <div class="col-md-4" v-for="stock in stocks" :key="stock.symbol">
+        <div class="card">
+          <img src="../../assets/hero.jpg" class="card-img-top stock-img" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title">Company: {{stock.name}}</h4>
+            <p class="card-text">Symbol: {{stock.symbol}}</p>
+            <p class="card-text">Price: {{stock.price}}</p>
+            <p class="card-text">Day High: {{stock.day_high}}</p>
+            <p class="card-text">Day Low: {{stock.day_low}}</p>
+            <p class="card-text">Day Low: {{stock.day_low}}</p>
+            <p class="card-text">Market Cap: {{stock.market_cap.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
+            <p></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -39,12 +51,16 @@ export default {
 };
 </script>
 
-<style>
-.stock-container {
-  margin-top: 3rem;
-  background-color: #fff;
-  height: 30vh;
+<style scoped>
+.card {
   border-radius: 5px;
+  margin-top: 4rem;
+  background: #252525;
+}
+
+.stock-img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 h3 {
