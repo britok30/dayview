@@ -3,6 +3,7 @@
     <Header />
     <div class="container">
       <SearchNews />
+      <Stocks />
     </div>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import Header from "./components/Header";
 import SearchNews from "./components/News/SearchNews";
+import Stocks from "./components/Stocks/Stocks";
 
 export default {
   name: "app",
   components: {
     Header,
-    SearchNews
+    SearchNews,
+    Stocks
   }
 };
 </script>

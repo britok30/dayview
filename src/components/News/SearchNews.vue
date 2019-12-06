@@ -16,7 +16,7 @@
               type="text"
               name="company"
               v-model="searchTerm"
-              placeholder="Enter Company"
+              placeholder="Search your favorite topics"
             />
           </div>
         </form>

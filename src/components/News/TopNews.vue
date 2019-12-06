@@ -66,8 +66,4 @@ p {
 a {
   font-size: 1.2rem;
 }
-
-.news {
-  margin: 4rem 0;
-}
 </style>
