@@ -72,7 +72,7 @@ export default {
 .card {
   border-radius: 5px;
   margin-top: 4rem;
-  background: #252525;
+  background: #181818;
 }
 
 .stock-img {

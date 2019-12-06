@@ -122,7 +122,7 @@ p {
 }
 
 .stockmedia {
-  background: #252525;
+  background: #181818;
   border-radius: 5px;
 }
 
