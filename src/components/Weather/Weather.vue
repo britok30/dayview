@@ -25,7 +25,7 @@
           />
           <div class="card-body">
             <h5 class="card-title city">{{ weather.name }}</h5>
-            <p class="card-text">
+            <p class="card-text cityweather">
               Weather: {{ weather.weather[0].main }} |
               {{ weather.weather[0].description }}
             </p>
@@ -125,6 +125,11 @@ label {
 .temp {
   font-size: 6rem;
   font-weight: 600;
+}
+
+.cityweather {
+    font-size:  1.6rem;
+    font-weight: 600;
 }
 
 p {
