@@ -1,18 +1,35 @@
 <template>
   <div>
     <WeatherShow />
-      <form @submit.prevent="onSubmit">
-      <div class="form-group">
-        <label for="weather">Search Stocks</label>
-        <input
-          class="search-weather"
-          type="text"
-          name="weather"
-          v-model="city"
-          placeholder="Enter city name"
-        />
+    <div class="row">
+      <div class="col-md-6 search">
+        <form @submit.prevent="onSubmit">
+          <div class="form-group">
+            <label for="weather">Search City</label>
+            <input
+              class="search-weather"
+              type="text"
+              name="weather"
+              v-model="city"
+              placeholder="Enter city name"
+            />
+          </div>
+        </form>
       </div>
-    </form>
+      <div class="col-md-6" v-for="weather in weatherData" :key="weather">
+        <div class="card">
+          <img src="../../assets/weather.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,11 +66,12 @@ export default {
 </script>
 
 <style scoped>
-.search {
+.search,
+.card {
   margin: 3rem 0;
 }
 
-.search-stocks {
+.search-weather {
   padding: 1rem;
   width: 100%;
   font-size: 1.5rem;
