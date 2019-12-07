@@ -16,17 +16,28 @@
           </div>
         </form>
       </div>
-      <div class="col-md-6">
-        <div class="card">
+      <div class="col-md-6" v-if="weather">
+        <div class="card" v-scroll-reveal.reset="animate1">
           <img
-            src="../../assets/weather.jpg"
+            src="../../assets/weather.png"
             class="card-img-top weatherimg"
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title">{{ weather.name }}</h5>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title city">{{ weather.name }}</h5>
+            <p class="card-text">
+              Weather: {{ weather.weather[0].main }} |
+              {{ weather.weather[0].description }}
+            </p>
+            <p class="card-text temp">
+              {{ Math.round(weather.main.temp) }}&deg; F
+            </p>
+            <p class="card-text">
+              Min. Temp: {{ Math.round(weather.main.temp_min) }} &deg; F
+            </p>
+            <p class="card-text">
+              Max Temp: {{ Math.round(weather.main.temp_max) }} &deg; F
+            </p>
           </div>
         </div>
       </div>
@@ -46,8 +57,14 @@ export default {
   data() {
     return {
       loading: true,
-      weather: {},
-      city: ""
+      weather: "",
+      city: "",
+      animate1: {
+        delay: 350,
+        duration: 3000,
+        origin: "bottom",
+        distance: "30px"
+      }
     };
   },
   methods: {
@@ -98,5 +115,19 @@ label {
 .weatherimg {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.city {
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+.temp {
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.4rem;
 }
 </style>
