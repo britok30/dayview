@@ -29,7 +29,12 @@
               :key="i"
               v-scroll-reveal.reset="animate1"
             >
-              <img v-if="news.urlToImage" :src="news.urlToImage" class="mr-3 newsimg" alt="..." />
+              <img
+                v-if="news.urlToImage"
+                :src="news.urlToImage"
+                class="mr-3 newsimg"
+                alt="..."
+              />
               <img
                 v-if="news.urlToImage == null"
                 src="../../assets/news.gif"
@@ -75,15 +80,22 @@ export default {
   methods: {
     onSubmit() {
       this.loading = true;
-      return axios
-        .get(
-          `https://newsapi.org/v2/everything?q=${this.searchTerm}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}&pageSize=${this.pageSize}`
-        )
-        .then(res => {
-          console.log(res.data.articles);
-          this.searchResults = res.data.articles;
-          this.loading = false;
+      if (!this.searchTerm) {
+        this.$toasted.show("Please enter a topic", {
+          duration: 3000,
+          icon: "exclamation-circle"
         });
+      } else {
+        return axios
+          .get(
+            `https://newsapi.org/v2/everything?q=${this.searchTerm}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}&pageSize=${this.pageSize}`
+          )
+          .then(res => {
+            console.log(res.data.articles);
+            this.searchResults = res.data.articles;
+            this.loading = false;
+          });
+      }
     }
   }
 };

@@ -92,17 +92,24 @@ export default {
   methods: {
     onSubmit() {
       this.loading = true;
-      return axios
-        .get(
-          `https://api.worldtradingdata.com/api/v1/stock?symbol=${this.stockSymbol.toUpperCase()}&api_token=${
-            process.env.VUE_APP_STOCKS_API_KEY
-          }`
-        )
-        .then(res => {
-          console.log(res.data.data);
-          this.searchStocks = res.data.data;
-          this.loading = false;
+      if (!this.searchStocks) {
+        this.$toasted.show("Please enter a company ticker", {
+          duration: 3000,
+          icon: "exclamation-circle"
         });
+      } else {
+        return axios
+          .get(
+            `https://api.worldtradingdata.com/api/v1/stock?symbol=${this.stockSymbol.toUpperCase()}&api_token=${
+              process.env.VUE_APP_STOCKS_API_KEY
+            }`
+          )
+          .then(res => {
+            console.log(res.data.data);
+            this.searchStocks = res.data.data;
+            this.loading = false;
+          });
+      }
     }
   }
 };
