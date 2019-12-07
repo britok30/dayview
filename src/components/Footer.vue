@@ -5,14 +5,13 @@
       Powered by
       <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer"
         >News Api</a
-      >
-      &
+      >,
       <a
         href="https://www.worldtradingdata.com/"
         target="_blank"
         rel="noopener noreferrer"
         >World Trading Data</a
-      >
+      >, & <a href="https://openweathermap.org/">OpenWeatherMap</a>
     </p>
     <p>Code & Design by Brito</p>
   </div>
