@@ -20,7 +20,7 @@
       <div class="col-md-6" v-if="weather">
         <div class="card" v-scroll-reveal.reset="animate1">
           <img
-            src="../../assets/weather.png"
+            src="../../assets/weather1.png"
             class="card-img-top weatherimg"
             alt="..."
           />
@@ -34,10 +34,10 @@
               {{ Math.round(weather.main.temp) }}&deg; F
             </p>
             <p class="card-text">
-              Min. Temp: {{ Math.round(weather.main.temp_min) }} &deg; F
+              Min. Temp: {{ Math.round(weather.main.temp_min) }}&deg; F
             </p>
             <p class="card-text">
-              Max Temp: {{ Math.round(weather.main.temp_max) }} &deg; F
+              Max Temp: {{ Math.round(weather.main.temp_max) }}&deg; F
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@
       <div class="col-md-6" v-if="weather.length == 0">
         <div class="card" v-scroll-reveal.reset="animate1">
           <img
-            src="../../assets/weather1.png"
+            src="../../assets/sanfran.jpg"
             class="card-img-top weatherimg"
             alt="..."
           />
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </template>
