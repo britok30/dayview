@@ -81,7 +81,7 @@ export default {
     onSubmit() {
       this.loading = true;
       if (!this.searchTerm) {
-        this.$toasted.show("Please enter a topic", {
+        this.$toasted.show("Please enter a news topic", {
           duration: 3000,
           icon: "exclamation-circle"
         });

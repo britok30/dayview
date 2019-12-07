@@ -46,19 +46,19 @@
       <div class="col-md-6" v-if="weather.length == 0">
         <div class="card" v-scroll-reveal.reset="animate1">
           <img
-            src="../../assets/notfound.jpg"
+            src="../../assets/weather1.png"
             class="card-img-top weatherimg"
             alt="..."
           />
           <div class="card-body">
-            <h1 class="card-title notfound">Request not found</h1>
+            <h1 class="card-title notfound">Search Weather</h1>
             <p>
-              The request you've put in could not be found. Please make sure to
-              enter the correct city name!
+              Enter your favorite city
             </p>
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </template>
@@ -139,7 +139,7 @@ label {
 
 .weatherimg {
   border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .city {

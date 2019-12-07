@@ -92,7 +92,7 @@ export default {
   methods: {
     onSubmit() {
       this.loading = true;
-      if (!this.searchStocks) {
+      if (!this.stockSymbol) {
         this.$toasted.show("Please enter a company ticker", {
           duration: 3000,
           icon: "exclamation-circle"
