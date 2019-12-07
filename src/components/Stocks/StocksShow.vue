@@ -23,7 +23,7 @@ export default {
 <style scoped>
 .showcase {
   background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
-    url("../../assets/stocks.jpg") no-repeat center center/cover;
+    url("../../assets/sanfran2.jpg") no-repeat center center/cover;
   height: 60vh;
   position: relative;
   border-radius: 5px;

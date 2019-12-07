@@ -20,11 +20,7 @@
         v-for="(stock, i) in searchStocks"
         :key="i"
       >
-        <img
-          src="../../assets/searchstocks.jpg"
-          class="mr-3 stockimg"
-          alt="stock image"
-        />
+        <div class="mr-3 stockimg"></div>
         <div class="media-body">
           <h3 class="mt-0">{{ stock.name }}</h3>
           <p>Symbol: {{ stock.symbol }}</p>
@@ -141,6 +137,8 @@ label {
   width: 60%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  background: url("../../assets/searchstocks.jpg") no-repeat center center/cover;
+  height: 65vh;
 }
 
 h3 {

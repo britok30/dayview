@@ -11,7 +11,7 @@
               type="text"
               name="weather"
               v-model="city"
-              placeholder="Enter city name (ex. 'San Francisco', 'Boston', etc.)"
+              placeholder="Enter city name (ex. 'San Francisco')"
             />
           </div>
         </form>
@@ -58,7 +58,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -145,11 +144,13 @@ label {
 .city {
   font-size: 6rem;
   font-weight: 600;
+  color: rgb(233, 113, 66);
 }
 
 .temp {
   font-size: 6rem;
   font-weight: 600;
+  color: rgb(233, 113, 66);
 }
 
 .cityweather {

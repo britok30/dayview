@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <p>DayViewTimes &copy;</p>
+    <p>BayViewTimes &copy;</p>
     <p>
       Powered by
       <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer"

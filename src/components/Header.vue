@@ -2,14 +2,14 @@
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
-        <span class="bold">Day</span>ViewTimes
+        <span class="bold">Bay</span>ViewTimes
       </a>
     </nav>
 
     <div class="header-text">
       <h1 v-scroll-reveal.reset="animate2">
         Your
-        <span class="bold">Day</span>
+        <span class="bold">Bay</span>
         starts here
       </h1>
     </div>
