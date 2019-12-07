@@ -11,11 +11,12 @@
               type="text"
               name="weather"
               v-model="city"
-              placeholder="Enter city name"
+              placeholder="Enter city name (ex. 'San Francisco', 'Boston', etc.)"
             />
           </div>
         </form>
       </div>
+
       <div class="col-md-6" v-if="weather">
         <div class="card" v-scroll-reveal.reset="animate1">
           <img
@@ -37,6 +38,23 @@
             </p>
             <p class="card-text">
               Max Temp: {{ Math.round(weather.main.temp_max) }} &deg; F
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" v-if="weather.length == 0">
+        <div class="card" v-scroll-reveal.reset="animate1">
+          <img
+            src="../../assets/notfound.jpg"
+            class="card-img-top weatherimg"
+            alt="..."
+          />
+          <div class="card-body">
+            <h1 class="card-title notfound">Request not found</h1>
+            <p>
+              The request you've put in could not be found. Please make sure to
+              enter the correct city name!
             </p>
           </div>
         </div>
@@ -70,15 +88,22 @@ export default {
   methods: {
     onSubmit() {
       this.loading = true;
-      return axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=imperial&appid=${process.env.VUE_APP_WEATHER_API_KEY}`
-        )
-        .then(res => {
-          console.log(res.data);
-          this.weather = res.data;
-          this.loading = false;
+      if (!this.city) {
+        this.$toasted.show("Please enter a city", {
+          duration: 3000,
+          icon: "exclamation-circle"
         });
+      } else {
+        return axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=imperial&appid=${process.env.VUE_APP_WEATHER_API_KEY}`
+          )
+          .then(res => {
+            console.log(res.data);
+            this.weather = res.data;
+            this.loading = false;
+          });
+      }
     }
   }
 };
@@ -128,11 +153,15 @@ label {
 }
 
 .cityweather {
-    font-size:  1.6rem;
-    font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 p {
   font-size: 1.4rem;
+}
+
+.notfound {
+  font-size: 4rem;
 }
 </style>
