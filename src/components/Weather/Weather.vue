@@ -16,15 +16,16 @@
           </div>
         </form>
       </div>
-      <div class="col-md-6" v-for="weather in weatherData" :key="weather">
+      <div class="col-md-6">
         <div class="card">
-          <img src="../../assets/weather.jpg" class="card-img-top" alt="..." />
+          <img
+            src="../../assets/weather.jpg"
+            class="card-img-top weatherimg"
+            alt="..."
+          />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h5 class="card-title">{{ weather.name }}</h5>
+            <p class="card-text"></p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
@@ -45,22 +46,23 @@ export default {
   data() {
     return {
       loading: true,
-      weatherData: "",
-      city: "London",
-      zip: ""
+      weather: {},
+      city: ""
     };
   },
-  created() {
-    this.loading = true;
-    return axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${process.env.VUE_APP_WEATHER_API_KEY}`
-      )
-      .then(res => {
-        console.log(res.data);
-        this.weatherData = res.data;
-        this.loading = false;
-      });
+  methods: {
+    onSubmit() {
+      this.loading = true;
+      return axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=imperial&appid=${process.env.VUE_APP_WEATHER_API_KEY}`
+        )
+        .then(res => {
+          console.log(res.data);
+          this.weather = res.data;
+          this.loading = false;
+        });
+    }
   }
 };
 </script>
@@ -86,5 +88,15 @@ input:focus {
 label {
   font-size: 2.3rem;
   letter-spacing: 4px;
+}
+
+.card {
+  background: #181818;
+  border-radius: 5px;
+}
+
+.weatherimg {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 </style>
