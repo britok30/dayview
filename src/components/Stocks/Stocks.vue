@@ -8,6 +8,7 @@
           <div class="card-body">
             <h3 class="card-title">{{stock.name}}</h3>
             <p class="card-text">Symbol: {{stock.symbol}}</p>
+            <p class="card-text">Last Trade Time: {{stock.last_trade_time}}</p>
             <p class="card-text">Price: {{stock.price}}</p>
             <p class="card-text">Day High: {{stock.day_high}}</p>
             <p class="card-text">Day Low: {{stock.day_low}}</p>

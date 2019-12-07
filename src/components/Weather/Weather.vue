@@ -13,7 +13,10 @@ export default {
     WeatherShow
   },
   data() {
-    return {};
+    return {
+      city: "",
+      zip: ""
+    };
   }
 };
 </script>

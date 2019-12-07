@@ -20,28 +20,52 @@
         v-for="(stock, i) in searchStocks"
         :key="i"
       >
-        <img src="../../assets/searchstocks.jpg" class="mr-3 stockimg" alt="stock image" />
+        <img
+          src="../../assets/searchstocks.jpg"
+          class="mr-3 stockimg"
+          alt="stock image"
+        />
         <div class="media-body">
-          <h3 class="mt-0">{{ stock.name}}</h3>
-          <p>Symbol: {{stock.symbol}}</p>
-          <p>Price: {{stock.price}}</p>
-          <p>Day High: {{stock.day_high}}</p>
-          <p>Day Low: {{stock.day_low}}</p>
-          <p>52 Week High: {{stock["52_week_high"]}}</p>
-          <p>52 Week Low: {{stock["52_week_low"]}}</p>
-          <p>Market Cap: {{stock.market_cap.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
-          <p>Volume: {{stock.volume.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}}</p>
-          <p>Stock Exchange: {{stock.stock_exchange_short}}</p>
+          <h3 class="mt-0">{{ stock.name }}</h3>
+          <p>Symbol: {{ stock.symbol }}</p>
+          <p>Last Trade Time: {{ stock.last_trade_time }}</p>
+          <p>Price: {{ stock.price }}</p>
+          <p>Day High: {{ stock.day_high }}</p>
+          <p>Day Low: {{ stock.day_low }}</p>
+          <p>52 Week High: {{ stock["52_week_high"] }}</p>
+          <p>52 Week Low: {{ stock["52_week_low"] }}</p>
+          <p>
+            Market Cap:
+            {{
+              stock.market_cap
+                .toString()
+                .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+            }}
+          </p>
+          <p>
+            Volume:
+            {{
+              stock.volume.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+            }}
+          </p>
+          <p>Stock Exchange: {{ stock.stock_exchange_short }}</p>
         </div>
       </div>
     </div>
 
     <div class="col-md-12" v-if="searchStocks == null">
       <div class="media stockmedia" v-scroll-reveal.reset="animate1">
-        <img src="../../assets/notfound.jpg" class="mr-3 stockimg" alt="stock image" />
+        <img
+          src="../../assets/notfound.jpg"
+          class="mr-3 stockimg"
+          alt="stock image"
+        />
         <div class="media-body">
           <h1 class="notfound">Request Not Found</h1>
-          <p>The request you've put in could not be found. Please make sure to enter the correct company ticker!</p>
+          <p>
+            The request you've put in could not be found. Please make sure to
+            enter the correct company ticker! (Ex. Tesla = "TSLA")
+          </p>
         </div>
       </div>
     </div>
@@ -107,7 +131,7 @@ label {
 }
 
 .stockimg {
-  width: 55%;
+  width: 60%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
