@@ -44,7 +44,9 @@
               <div class="media-body">
                 <h3 class="mt-0">{{ news.title }}</h3>
                 <p>{{ news.description }}</p>
-                <a :href="news.url">News Article</a>
+                <a :href="news.url" target="_blank" rel="noopener noreferrer"
+                  >News Article</a
+                >
               </div>
             </div>
           </div>
