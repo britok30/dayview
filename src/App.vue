@@ -1,34 +1,35 @@
 <template>
   <div id="app">
-    <Header />
+    <!-- <Header />
     <SearchNews />
     <Stocks />
     <Weather />
     <AppStore />
     <BayView />
-    <Footer />
+    <Footer /> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
-import SearchNews from "./components/News/SearchNews";
-import Stocks from "./components/Stocks/Stocks";
-import Weather from "./components/Weather/Weather";
-import AppStore from "./components/AppStore/AppStore";
-import BayView from "./components/BayView/BayView";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import SearchNews from "./components/News/SearchNews";
+// import Stocks from "./components/Stocks/Stocks";
+// import Weather from "./components/Weather/Weather";
+// import AppStore from "./components/AppStore/AppStore";
+// import BayView from "./components/BayView/BayView";
+// import Footer from "./components/Footer";
 
 export default {
   name: "app",
   components: {
-    Header,
-    SearchNews,
-    Stocks,
-    Weather,
-    AppStore,
-    BayView,
-    Footer
+    // Header,
+    // SearchNews,
+    // Stocks,
+    // Weather,
+    // AppStore,
+    // BayView,
+    // Footer
   }
 };
 </script>
