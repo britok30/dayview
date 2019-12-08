@@ -1,9 +1,15 @@
 <template>
   <section id="news">
-    <h2 class="lead-head" v-scroll-reveal.reset="animate1">Your News</h2>
+    <h2 class="lead-head" v-scroll-reveal.reset="animate1">
+      Your News <br />
+      <span class="date">{{ date }}</span>
+    </h2>
     <div class="row">
       <div class="col-md-6">
-        <h2 class="top-lead">Top News</h2>
+        <h2 class="top-lead">
+          Top News
+        </h2>
+
         <TopNews />
       </div>
 
@@ -59,6 +65,7 @@
 <script>
 import axios from "axios";
 import TopNews from "./TopNews";
+import moment from "moment";
 
 export default {
   name: "SearchNews",
@@ -99,6 +106,11 @@ export default {
           });
       }
     }
+  },
+  computed: {
+    date() {
+      return moment().format("dddd, MMMM Do YYYY");
+    }
   }
 };
 </script>
@@ -112,6 +124,10 @@ export default {
   margin-top: 4rem;
   font-size: 2.3rem;
   letter-spacing: 4px;
+}
+
+.date {
+  font-size: 3rem;
 }
 
 .search {
