@@ -1,9 +1,9 @@
 <template>
   <div class="newsapp">
     <div class="row">
-      <div class="col-md-7 gif"></div>
-      <div class="col-md-5">
-        <h2>Your news on the go</h2>
+      <div class="col-md-7 gif" v-scroll-reveal.reset="animate1"></div>
+      <div class="col-md-5" v-scroll-reveal.reset="animate2">
+        <h2>Your News On The Go</h2>
         <img class="appstore" src="../../assets/appleapp.png" alt="appstore" />
       </div>
     </div>
@@ -12,11 +12,30 @@
 
 <script>
 export default {
-  name: "NewsApp"
+  name: "NewsApp",
+  data(){
+    return {
+       animate1: {
+        delay: 350,
+        duration: 3500,
+        origin: "bottom",
+        distance: "30px"
+      },
+      animate2: {
+        delay: 1500,
+        duration: 3500,
+        origin: "bottom",
+        distance: "30px"
+      }
+    }
+  }
 };
 </script>
 
 <style scoped>
+.newsapp {
+  margin-top: 4rem;
+}
 .gif {
   background: url("../../assets/app.gif") no-repeat center center/cover;
   height: 50vh;
@@ -31,7 +50,7 @@ export default {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: center;
   font-weight: 600;
   color: rgb(233, 113, 66);
