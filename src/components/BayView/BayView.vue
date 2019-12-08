@@ -2,11 +2,12 @@
   <div class="bayview">
     <div class="row">
       <div class="col-md-5">
-        <h1>BayViewTimes</h1>
-        <p>Stay tuned for more</p>
+        <h1 class="baylead"><span class="bold">Bay</span></h1>
+        <h1 class="baylead">View</h1>
+        <h1 class="baylead">Times</h1>
       </div>
       <div class="col-md-7">
-        <video autoplay loop muted>
+        <video class="bay" autoplay loop muted>
           <source src="../../assets/east-coast.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -16,7 +17,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "BayView",
+  data() {
+    return {};
+  }
+};
 </script>
 
-<style></style>
+<style scoped>
+.bayview {
+  margin-top: 8rem;
+}
+
+.baylead {
+  font-size: 10rem;
+}
+.bay {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.bold {
+  font-weight: 600;
+  color: rgb(233, 113, 66);
+}
+</style>
