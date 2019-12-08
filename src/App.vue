@@ -6,6 +6,7 @@
       <Stocks />
       <Weather />
       <AppStore />
+      <BayView />
       <Footer />
     </div>
   </div>
@@ -17,6 +18,7 @@ import SearchNews from "./components/News/SearchNews";
 import Stocks from "./components/Stocks/Stocks";
 import Weather from "./components/Weather/Weather";
 import AppStore from "./components/AppStore/AppStore";
+import BayView from "./components/BayView/BayView";
 import Footer from "./components/Footer";
 
 export default {
@@ -27,6 +29,7 @@ export default {
     Stocks,
     Weather,
     AppStore,
+    BayView,
     Footer
   }
 };
