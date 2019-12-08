@@ -28,6 +28,6 @@ p {
 }
 
 .footer {
-  padding: 20rem 0 10rem 0;
+  padding: 40rem 0 10rem 0;
 }
 </style>
