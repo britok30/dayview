@@ -1,9 +1,9 @@
 <template>
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
+      <router-link class="navbar-brand" to="/" v-scroll-reveal.reset="animate1">
         <span class="bold">Bay</span><span class="poiret">ViewTimes</span>
-      </a>
+      </router-link>
     </nav>
 
     <div class="header-text">
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
   name: "Navbar",
   data() {

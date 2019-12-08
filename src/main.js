@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import router from "./router";
 import VueScrollReveal from "vue-scroll-reveal";
 import VueToasted from "vue-toasted";
 
@@ -11,5 +12,6 @@ Vue.use(VueToasted, {
 });
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount("#app");

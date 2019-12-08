@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header />
+    <!-- <Header /> -->
+    <router-view></router-view>
     <div class="container">
       <SearchNews />
       <Stocks />
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import SearchNews from "./components/News/SearchNews";
 import Stocks from "./components/Stocks/Stocks";
 import Weather from "./components/Weather/Weather";
@@ -24,7 +25,6 @@ import Footer from "./components/Footer";
 export default {
   name: "app",
   components: {
-    Header,
     SearchNews,
     Stocks,
     Weather,
