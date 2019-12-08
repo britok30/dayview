@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
-    <p>BayViewTimes &copy;</p>
-    <p>
+    <p v-scroll-reveal.reset="animate1">BayViewTimes &copy;</p>
+    <p v-scroll-reveal.reset="animate1">
       Powered by
       <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer"
         >News Api</a
@@ -13,12 +13,24 @@
         >World Trading Data</a
       >, & <a href="https://openweathermap.org/">OpenWeatherMap</a>
     </p>
-    <p>Code & Design by Brito</p>
+    <p v-scroll-reveal.reset="animate1">Code & Design by Brito</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Footer",
+  data() {
+    return {
+      animate1: {
+        delay: 350,
+        duration: 3500,
+        origin: "bottom",
+        distance: "30px"
+      }
+    };
+  }
+};
 </script>
 
 <style scoped>

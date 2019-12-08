@@ -9,7 +9,7 @@
         <h1 class="poiret" v-scroll-reveal.reset="animate1">Times</h1>
       </div>
       <div class="col-md-7">
-        <video class="bay" autoplay loop muted>
+        <video class="bay" autoplay loop muted preload="auto">
           <source src="../../assets/east-coast.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
