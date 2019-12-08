@@ -2,7 +2,7 @@
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="/" v-scroll-reveal.reset="animate1">
-        <span class="bold">Bay</span>ViewTimes
+        <span class="bold">Bay</span><span class="poiret">ViewTimes</span>
       </a>
     </nav>
 
@@ -47,6 +47,10 @@ export default {
 .bold {
   font-weight: 600;
   color: rgb(233, 113, 66);
+}
+
+.poiret {
+  font-family: "Poiret One", sans-serif;
 }
 
 #header {
