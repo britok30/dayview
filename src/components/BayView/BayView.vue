@@ -1,5 +1,6 @@
 <template>
-  <div class="bayview">
+  <div class="container">
+    <div class="bayview">
     <div class="row">
       <div class="col-md-5">
         <h1 class="baylead" v-scroll-reveal.reset="animate1">
@@ -15,6 +16,7 @@
         </video>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -65,7 +67,7 @@ export default {
     transform: translatey(0px);
   }
   50% {
-    box-shadow: 0 25px 15px 0px #31313181;
+    box-shadow: 0 25px 15px 0px #000;
     transform: translatey(-20px);
   }
   100% {

@@ -1,10 +1,16 @@
 <template>
-  <div class="newsapp">
-    <div class="row">
-      <div class="col-md-7 gif" v-scroll-reveal.reset="animate1"></div>
-      <div class="col-md-5" v-scroll-reveal.reset="animate2">
-        <h2>Your News On The Go</h2>
-        <img class="appstore" src="../../assets/appleapp.png" alt="appstore" />
+  <div class="container">
+    <div class="newsapp">
+      <div class="row">
+        <div class="col-md-7 gif" v-scroll-reveal.reset="animate1"></div>
+        <div class="col-md-5" v-scroll-reveal.reset="animate2">
+          <h2>Your News On The Go</h2>
+          <img
+            class="appstore"
+            src="../../assets/appleapp.png"
+            alt="appstore"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -13,9 +19,9 @@
 <script>
 export default {
   name: "NewsApp",
-  data(){
+  data() {
     return {
-       animate1: {
+      animate1: {
         delay: 350,
         duration: 3500,
         origin: "bottom",
@@ -27,7 +33,7 @@ export default {
         origin: "bottom",
         distance: "30px"
       }
-    }
+    };
   }
 };
 </script>

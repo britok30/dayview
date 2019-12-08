@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <WeatherShow />
     <div class="row">
       <div class="col-md-6 search">

@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import App from "./App.vue";
-import NotFound from "./components/NotFound.vue";
+import NotFound from "./components/NotFound";
 
 Vue.use(Router);
 
@@ -9,12 +8,8 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      path: "/",
-      name: "app",
-      component: App
-    },
-    {
       path: "/404",
+      name: "notfound",
       component: NotFound
     },
     {

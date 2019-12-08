@@ -1,58 +1,60 @@
 <template>
   <section id="news">
-    <h2 class="lead-head" v-scroll-reveal.reset="animate1">
-      Your News <br />
-      <span class="date">{{ date }}</span>
-    </h2>
-    <div class="row">
-      <div class="col-md-6">
-        <h2 class="top-lead">
-          Top News
-        </h2>
+    <div class="container">
+      <h2 class="lead-head" v-scroll-reveal.reset="animate1">
+        Your News <br />
+        <span class="date">{{ date }}</span>
+      </h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="top-lead">
+            Top News
+          </h2>
 
-        <TopNews />
-      </div>
+          <TopNews />
+        </div>
 
-      <div class="col-md-6 search">
-        <form @submit.prevent="onSubmit">
-          <div class="form-group">
-            <label for="news">Search News</label>
-            <input
-              class="search-company"
-              type="text"
-              name="news"
-              v-model="searchTerm"
-              placeholder="Enter your favorite topics"
-            />
-          </div>
-        </form>
-
-        <div class="row">
-          <div class="col-md-12" v-if="searchResults">
-            <div
-              class="media news"
-              v-for="(news, i) in searchResults"
-              :key="i"
-              v-scroll-reveal.reset="animate1"
-            >
-              <img
-                v-if="news.urlToImage"
-                :src="news.urlToImage"
-                class="mr-3 newsimg"
-                alt="..."
+        <div class="col-md-6 search">
+          <form @submit.prevent="onSubmit">
+            <div class="form-group">
+              <label for="news">Search News</label>
+              <input
+                class="search-company"
+                type="text"
+                name="news"
+                v-model="searchTerm"
+                placeholder="Enter your favorite topics"
               />
-              <img
-                v-if="news.urlToImage == null"
-                src="../../assets/news.gif"
-                class="mr-3 newsimg"
-                alt="..."
-              />
-              <div class="media-body">
-                <h3 class="mt-0">{{ news.title }}</h3>
-                <p>{{ news.description }}</p>
-                <a :href="news.url" target="_blank" rel="noopener noreferrer"
-                  >News Article</a
-                >
+            </div>
+          </form>
+
+          <div class="row">
+            <div class="col-md-12" v-if="searchResults">
+              <div
+                class="media news"
+                v-for="(news, i) in searchResults"
+                :key="i"
+                v-scroll-reveal.reset="animate1"
+              >
+                <img
+                  v-if="news.urlToImage"
+                  :src="news.urlToImage"
+                  class="mr-3 newsimg"
+                  alt="..."
+                />
+                <img
+                  v-if="news.urlToImage == null"
+                  src="../../assets/news.gif"
+                  class="mr-3 newsimg"
+                  alt="..."
+                />
+                <div class="media-body">
+                  <h3 class="mt-0">{{ news.title }}</h3>
+                  <p>{{ news.description }}</p>
+                  <a :href="news.url" target="_blank" rel="noopener noreferrer"
+                    >News Article</a
+                  >
+                </div>
               </div>
             </div>
           </div>

@@ -1,15 +1,12 @@
 <template>
   <div id="app">
     <Header />
-    <div class="container">
-      <SearchNews />
-      <Stocks />
-      <Weather />
-      <AppStore />
-      <BayView />
-      <NotFound />
-      <Footer />
-    </div>
+    <SearchNews />
+    <Stocks />
+    <Weather />
+    <AppStore />
+    <BayView />
+    <Footer />
   </div>
 </template>
 
@@ -20,7 +17,6 @@ import Stocks from "./components/Stocks/Stocks";
 import Weather from "./components/Weather/Weather";
 import AppStore from "./components/AppStore/AppStore";
 import BayView from "./components/BayView/BayView";
-import NotFound from "./components/NotFound";
 import Footer from "./components/Footer";
 
 export default {
@@ -32,7 +28,6 @@ export default {
     Weather,
     AppStore,
     BayView,
-    NotFound,
     Footer
   }
 };

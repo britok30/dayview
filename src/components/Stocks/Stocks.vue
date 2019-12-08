@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <StocksShow />
     <div class="row">
       <div class="col-md-4" v-for="stock in stocks" :key="stock.symbol">

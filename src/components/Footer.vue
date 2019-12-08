@@ -1,19 +1,21 @@
 <template>
-  <div class="footer">
-    <p v-scroll-reveal.reset="animate1">BayViewTimes &copy;</p>
-    <p v-scroll-reveal.reset="animate1">
-      Powered by
-      <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer"
-        >News Api</a
-      >,
-      <a
-        href="https://www.worldtradingdata.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >World Trading Data</a
-      >, & <a href="https://openweathermap.org/">OpenWeatherMap</a>
-    </p>
-    <p v-scroll-reveal.reset="animate1">Code & Design by Brito</p>
+  <div class="container">
+    <div class="footer">
+      <p v-scroll-reveal.reset="animate1">BayViewTimes &copy;</p>
+      <p v-scroll-reveal.reset="animate1">
+        Powered by
+        <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer"
+          >News Api</a
+        >,
+        <a
+          href="https://www.worldtradingdata.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >World Trading Data</a
+        >, & <a href="https://openweathermap.org/">OpenWeatherMap</a>
+      </p>
+      <p v-scroll-reveal.reset="animate1">Code & Design by Brito</p>
+    </div>
   </div>
 </template>
 
