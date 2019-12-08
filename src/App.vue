@@ -5,6 +5,7 @@
       <SearchNews />
       <Stocks />
       <Weather />
+      <AppStore />
       <Footer />
     </div>
   </div>
@@ -15,6 +16,7 @@ import Header from "./components/Header";
 import SearchNews from "./components/News/SearchNews";
 import Stocks from "./components/Stocks/Stocks";
 import Weather from "./components/Weather/Weather";
+import AppStore from "./components/AppStore/AppStore";
 import Footer from "./components/Footer";
 
 export default {
@@ -24,6 +26,7 @@ export default {
     SearchNews,
     Stocks,
     Weather,
+    AppStore,
     Footer
   }
 };
